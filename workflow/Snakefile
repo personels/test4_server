@@ -10,7 +10,7 @@ rule all:
 
 rule count:
 	input:
-		"resources/{filename}.txt"
+		"/Users/mhb8436/Workspaces/snake/test4/resources/{filename}.txt"
 	output:
 		"results/{OUTDIR}/wc_{filename}.txt"
 	shell:
