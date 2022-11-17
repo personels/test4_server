@@ -1,0 +1,34 @@
+configfile: "config/config.yaml"
+
+FILENAMES = ['A','B','C']
+OUTDIR = config['out_dir']
+print(OUTDIR)
+
+rule all:
+	input:
+		expand("results/{OUTDIR}/wc_all.png", OUTDIR=OUTDIR)
+
+rule count:
+	input:
+		"resources/{filename}.txt"
+	output:
+		"results/{OUTDIR}/wc_{filename}.txt"
+	shell:
+		"wc -w {input} > {output}"
+
+rule concat:
+	input:
+		expand('results/{OUTDIR}/wc_{filename}.txt', filename=FILENAMES, OUTDIR=OUTDIR)
+	output:
+		expand("results/{OUTDIR}/wc_all.csv", OUTDIR=OUTDIR)
+	script:
+		"scripts/concat.py"
+
+rule plot:
+	input:
+		expand("results/{OUTDIR}/wc_all.csv", OUTDIR=OUTDIR)
+	output:
+		expand("results/{OUTDIR}/wc_all.png", OUTDIR=OUTDIR)
+	script:
+		"scripts/plot.py"
+

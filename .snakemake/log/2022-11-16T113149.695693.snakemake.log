@@ -1,3 +1,0 @@
-WildcardErrorin line 21 of /Users/mhb8436/Workspaces/snake/test4/Snakefile:
-No values given for wildcard 'OUTDIR'.
-  File "/Users/mhb8436/Workspaces/snake/test4/Snakefile", line 21, in <module>

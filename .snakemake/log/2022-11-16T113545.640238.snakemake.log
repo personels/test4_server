@@ -1,3 +1,0 @@
-WildcardErrorin line 15 of /Users/mhb8436/Workspaces/snake/test4/Snakefile:
-No values given for wildcard 'filename'.
-  File "/Users/mhb8436/Workspaces/snake/test4/Snakefile", line 15, in <module>

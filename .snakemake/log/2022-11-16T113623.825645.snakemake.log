@@ -1,3 +1,0 @@
-NameErrorin line 15 of /Users/mhb8436/Workspaces/snake/test4/Snakefile:
-name 'filename' is not defined
-  File "/Users/mhb8436/Workspaces/snake/test4/Snakefile", line 15, in <module>
