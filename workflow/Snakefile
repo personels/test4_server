@@ -12,23 +12,23 @@ rule count:
 	input:
 		"/Users/mhb8436/Workspaces/snake/test4/resources/{filename}.txt"
 	output:
-		"results/{OUTDIR}/wc_{filename}.txt"
+		"/Users/mhb8436/Workspaces/snake/test4/results/{OUTDIR}/wc_{filename}.txt"
 	shell:
 		"wc -w {input} > {output}"
 
 rule concat:
 	input:
-		expand('results/{OUTDIR}/wc_{filename}.txt', filename=FILENAMES, OUTDIR=OUTDIR)
+		expand('/Users/mhb8436/Workspaces/snake/test4/results/{OUTDIR}/wc_{filename}.txt', filename=FILENAMES, OUTDIR=OUTDIR)
 	output:
-		expand("results/{OUTDIR}/wc_all.csv", OUTDIR=OUTDIR)
+		expand("/Users/mhb8436/Workspaces/snake/test4/results/{OUTDIR}/wc_all.csv", OUTDIR=OUTDIR)
 	script:
 		"scripts/concat.py"
 
 rule plot:
 	input:
-		expand("results/{OUTDIR}/wc_all.csv", OUTDIR=OUTDIR)
+		expand("/Users/mhb8436/Workspaces/snake/test4/results/{OUTDIR}/wc_all.csv", OUTDIR=OUTDIR)
 	output:
-		expand("results/{OUTDIR}/wc_all.png", OUTDIR=OUTDIR)
+		expand("/Users/mhb8436/Workspaces/snake/test4/results/{OUTDIR}/wc_all.png", OUTDIR=OUTDIR)
 	script:
 		"scripts/plot.py"
 
