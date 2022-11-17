@@ -1,0 +1,4 @@
+Config file config.yaml is extended by additional config specified via the command line.
+WildcardErrorin line 10 of /Users/mhb8436/Workspaces/snake/test4/Snakefile:
+No values given for wildcard 'config'.
+  File "/Users/mhb8436/Workspaces/snake/test4/Snakefile", line 10, in <module>
