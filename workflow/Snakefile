@@ -2,7 +2,7 @@ configfile: "config/config.yaml"
 
 FILENAMES = ['A','B','C']
 OUTDIR = config['out_dir']
-print(OUTDIR)
+#print(OUTDIR)
 
 rule all:
 	input:
